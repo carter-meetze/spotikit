@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # secrets
-*.secrets.py
+secrets.py
