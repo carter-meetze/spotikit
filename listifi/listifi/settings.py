@@ -17,9 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/'
 SECRET_KEY = '@uo_-$so!29e6a)@5kazyh811g%l@svukd%(bijdjh+x5+)duv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -37,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'listifi',
 ]
 
 MIDDLEWARE = [
@@ -49,12 +48,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'playlistmaker.urls'
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+ROOT_URLCONF = 'listifi.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["/Users/cartermeetze/code/spotify/listifi/listifi/Templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'playlistmaker.wsgi.application'
+WSGI_APPLICATION = 'listifi.wsgi.application'
 
 
 # Database
