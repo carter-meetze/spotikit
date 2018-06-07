@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>Cookie Policy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-hnnJox/visualization-of-bright-dots-moving-around-a-dark-background_n1l_mmuu__F0000.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+@media (max-width:600px){
+    .h1{
+        font-size:32px!important
+    }
+    .h2{
+        font-size:28px!important
+    }
+    .h3{
+        font-size:24px!important
+    }
+    .h4{
+        font-size:20px!important
+    }
+    .h5{
+        font-size:16px!important
+    }
+    .h6{
+        font-size:14px!important
+    }
+    .a{
+        font-size:30px!important
+    }
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topmiddle">
+    <h1 class="w3-jumbo w3-animate-top h1">Listifi</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:69%">
+  </div>
+    <div class="w3-display-middle w3-center h1 h2 h3 h4 h5 h6">
+              <br>
+              <br>
+              <br>
+              <h2 class="h2">What are cookies?</h2>
+                <p>A cookie is a small text file that a website saves on your computer or mobile device when you visit the site. It enables the website to remember your actions and preferences (such as login, language, font size and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another.</p>
+              <br>
+              <h2 class="h2">How does Listifi use cookies?</h2>
+                <p>Listifi uses your login information as a cookie to access Spotify's API</p>
+              <br>
+              <h2 class="h2">What if I disable cookies?</h2>
+                <p>If you disable cookies for this site, then we won't be able to access Spotify's API! This means we won't be able to make you any custom playlists.</p>
+    </div>
+        <div class="w3-display-bottommiddle w3-center h1 h2 h3 h4 h5 h6">
+        <button class="w3-btn" onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+    window.history.back();
+    }
+</script>
+
+            <span> or </span>
+        <button class="w3-btn" onclick="goLogin()">Login</button>
+            <script>
+function goLogin() {
+    window.location.href = 'http://localhost:8000/spotify/listifi/listifi/Templates/login.html';
+    }
+</script>
+    </div>
+</div>
+
+</body>
+</html>
+
+

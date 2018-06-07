@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>Help</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-hnnJox/visualization-of-bright-dots-moving-around-a-dark-background_n1l_mmuu__F0000.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+@media (max-width:600px){
+    .h1{
+        font-size:18px!important
+    }
+    .h2{
+        font-size:15px!important
+    }
+    .h3{
+        font-size:12px!important
+    }
+    .h4{
+        font-size:10px!important
+    }
+    .h5{
+        font-size:9px!important
+    }
+    .h6{
+        font-size:8px!important
+        }
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topmiddle">
+    <h1 class="w3-jumbo w3-animate-top">Listifi</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:69%">
+  </div>
+    <div class="w3-display-middle w3-center h1 h2 h3 h4 h5 h6">
+              <br>
+              <br>
+              <br>
+              <h2>What is Listifi?</h2>
+                <p>Listifi is a website that makes playlists based on certain criteria that you choose! After picking an artist you'd like to hear, you can choose some genres that you want to be included and customize the name of your playlist and the number of tracks included.</p>
+              <br>
+              <h2>How does it work?</h2>
+                <p>After filling out the form, this website accesses Spotify's API to create a playlist inside the app.</p>
+              <br>
+              <h2>I have another question.</h2>
+        <span>Please send an </span> <a href="mailto:listifi.contact@gmail.com?Subject=Listifi%20Contact%20Form">email</a> <span>to us and we'll make sure to answer any questions you might have </span>
+    </div>
+        <div class="w3-display-bottommiddle w3-center h1 h2 h3 h4 h5 h6">
+        <button class="w3-btn" onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+    window.history.back();
+    }
+</script>
+
+            <span> or </span>
+        <button class="w3-btn" onclick="goLogin()">Login</button>
+            <script>
+function goLogin() {
+    window.location.href = 'http://localhost:8000/spotify/listifi/listifi/Templates/login.html';
+    }
+</script>
+    </div>
+</div>
+
+</body>
+</html>
