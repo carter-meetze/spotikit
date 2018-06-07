@@ -5,38 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1 {font-family: "Raleway", Arial, sans-serif}
-h1 {letter-spacing: 6px}
-.w3-row-padding img {margin-bottom: 12px}
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-hnnJox/visualization-of-bright-dots-moving-around-a-dark-background_n1l_mmuu__F0000.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width:600px){
+    .h1{
+        font-size:32px!important
+    }
+    .h2{
+        font-size:28px!important
+    }
+    .h3{
+        font-size:24px!important
+    }
+    .h4{
+        font-size:20px!important
+    }
+    .h5{
+        font-size:16px!important
+    }
+    .h6{
+        font-size:14px!important
+    }
+    .a{
+        font-size:30px!important
+    }
+}
 </style>
 <body>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
-
-<!-- Header -->
-<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
-  <h1 class="w3-xlarge">Listifi</h1>
-
-  <div class="w3-padding-32">
-    <div class="w3-bar w3-border">
-      <a href="#" class="w3-bar-item w3-button">Playlist Maker</a>
-      <a href="#" class="w3-bar-item w3-button">About</a>
-      <a href="#" class="w3-bar-item w3-button">Contact</a>
-    </div>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topmiddle h1 h2 h3 h4 h5 h6">
+    <h1 class="w3-jumbo w3-animate-top h1">Listifi</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:auto%">
   </div>
-</header>
-    <form action="result.html" method="post">
-    {% csrf_token %} {{ form }}
-    <input type="submit" value="Submit"/>
-</form>
-<!-- End Page Content -->
-</div>
+    <div class="w3-display-middle w3-center w3-responsive h1 h2 h3 h4 h5 h6">
+        <br>
+        <br>
 
+              <form action="result.html" method="post">
+    {% csrf_token %}
+            <h6> Enter an artist:</h6>
+                  {{ form.artist }}
+                <br>
+            <h6> Choose some genres:</h6> {{ form.genre }}
+                <br>
+            <h6> Give your playlist a title:</h6> {{ form.title }}
+                <br>
+            <h6> How many tracks? (Up to 15) </h6> {{ form.tracks }}
+                <br>
+                  <br>
+                  <hr class="w3-border-grey" style="margin:auto;width:15%">
+                  <br>
+    <input type="submit" value="Submit"/>
+        </form>
+      </div>
+    <div class="w3-display-bottommiddle w3-center h1 h2 h3 h4 h5 h6">
+        <a href="http://localhost:8000/spotify/listifi/listifi/Templates/cookies.html">Cookie Policy</a>
+    </div>
+    <div class="w3-display-topright w3-center h1 h2 h3 h4 h5 h6">
+        <a href="http://localhost:8000/spotify/listifi/listifi/Templates/help.html">Help</a>
+    </div>
+
+</div>
 
 </body>
 </html>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<title>Listifi</title>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--&lt;!&ndash;<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">&ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--<style>-->
+<!--body,h1 {font-family: "Raleway", Arial, sans-serif}-->
+<!--h1 {letter-spacing: 6px}-->
+<!--.w3-row-padding img {margin-bottom: 12px}-->
+<!--</style>-->
+<!--<body>-->
+
+<!--&lt;!&ndash; !PAGE CONTENT! &ndash;&gt;-->
+<!--<div class="w3-content" style="max-width:1500px">-->
+
+<!--&lt;!&ndash; Header &ndash;&gt;-->
+<!--<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">-->
+  <!--<h1 class="w3-xlarge">Listifi</h1>-->
+
+  <!--<div class="w3-padding-32">-->
+    <!--<div class="w3-bar w3-border">-->
+      <!--<a href="#" class="w3-bar-item w3-button">Playlist Maker</a>-->
+      <!--<a href="#" class="w3-bar-item w3-button">About</a>-->
+      <!--<a href="#" class="w3-bar-item w3-button">Contact</a>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</header>-->
+    <!--<form action="result.html" method="post">-->
+    <!--{% csrf_token %} {{ form }}-->
+    <!--<input type="submit" value="Submit"/>-->
+<!--</form>-->
+<!--&lt;!&ndash; End Page Content &ndash;&gt;-->
+<!--</div>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+        <!--<form action="result.html" method="post">-->
+    <!--{% csrf_token %}-->
+
+            <!--<h2> Enter an artist:</h2> {{ form.artist }}-->
+                <!--<br>-->
+                <!--<br>-->
+                <!--<br>-->
+            <!--<h2> Choose some genres:</h2> {{ form.genre }}-->
+                <!--<br>-->
+                <!--<br>-->
+                <!--<br>-->
+            <!--<h2> Give your playlist a title:</h2> {{ form.title }}-->
+                <!--<br>-->
+                <!--<br>-->
+                <!--<br>-->
+            <!--<h2> How many tracks? (Up to 15) </h2> {{ form.tracks }}-->
+                <!--<br>-->
+                <!--<br>-->
+                <!--<br>-->
+
+    <!--<input type="submit" value="Submit"/>-->
+        <!--</form>-->

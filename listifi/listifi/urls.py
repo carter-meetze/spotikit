@@ -44,6 +44,12 @@ urlpatterns = [
 
     url(r'^spotify/listifi/listifi/Templates/result.html', AuthUser.as_view()),
 
+    url(r'spotify/listifi/listifi/Templates/cookies.html', TemplateView.as_view(template_name='cookies.html')),
+
+    url(r'spotify/listifi/listifi/Templates/help.html', TemplateView.as_view(template_name='help.html')),
+
+    url(r'spotify/listifi/listifi/Templates/error.html', TemplateView.as_view(template_name='error.html')),
+
     url(
         r'favicon.ico$',
         RedirectView.as_view(

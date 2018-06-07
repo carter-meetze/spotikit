@@ -1,36 +1,58 @@
-<h4>Check Spotify for your new playlist!</h4>
-<table>
-<tr>
-<td>
- Artist Entered
-</td>
-<td>
- {{ artist }}
-</td>
-</tr>
-<tr>
-<td>
- Genre(s) Entered
-</td>
-<td>
- {{ genre }}
-</td>
-</tr>
-<tr>
-<td>
- Playlist Name
-</td>
-<td>
- {{ title }}
-</td>
-</tr>
-<tr>
-<td>
- Tracks in Playlist
-</td>
-<td>
- {{ tracks }}
-</td>
-</tr>
-</table>
-<a href="http://localhost:8000/spotify/playlistmaker/playlistmaker/Templates/entryform.html" class="btn btn-success">Make another playlist?</a>
+<!DOCTYPE html>
+<html>
+<title>Listifi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-hnnJox/visualization-of-bright-dots-moving-around-a-dark-background_n1l_mmuu__F0000.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+@media (max-width:600px){
+    .h1{
+        font-size:32px!important
+    }
+    .h2{
+        font-size:28px!important
+    }
+    .h3{
+        font-size:24px!important
+    }
+    .h4{
+        font-size:20px!important
+    }
+    .h5{
+        font-size:16px!important
+    }
+    .h6{
+        font-size:14px!important
+    }
+    .a{
+        font-size:30px!important
+    }
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topmiddle">
+    <h1 class="w3-jumbo w3-animate-top h1">Listifi</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:69%">
+  </div>
+    <div class="w3-display-middle w3-center">
+     <h4>Check Spotify for your new playlist!</h4>
+
+        <br>
+        <br>
+<a href="http://localhost:8000/spotify/listifi/listifi/Templates/entryform.html" class="w3-bar w3-btn">Make another playlist?</a>
+      </div>
+</div>
+
+</body>
+</html>

@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 import random
 import os
+from decouple import config
 
 
 def login_render(request):
@@ -33,8 +34,6 @@ class AuthUser(View):
                     else:
                         pass
 
-                    print(os.environ)
-
                     # get the authorization code, along with the access token
                     self.code = request.GET.get('code')
                     print("Retrieved code: " + self.code)
@@ -58,7 +57,7 @@ class AuthUser(View):
                     )
 
                 except(KeyError, TypeError, NameError):
-                    return HttpResponseRedirect('http://localhost:8000/spotify/listifi/listifi/Templates/login.html')
+                    return HttpResponseRedirect('http://localhost:8000/spotify/listifi/listifi/Templates/error.html')
 
     form_class_entry = EntryForm
     template_name_entry = 'entryform.html'
@@ -70,7 +69,7 @@ class AuthUser(View):
             self.token = request.session.get('access_token')
         else:
             return HttpResponseRedirect(
-                'http://localhost:8000/spotify/listifi/listifi/Templates/login.html'
+                'http://localhost:8000/spotify/listifi/listifi/Templates/error.html'
             )
 
         form = self.form_class_entry(request.POST)
@@ -137,7 +136,6 @@ class AuthUser(View):
 
                 # test to see if it meets requested track number, tries it 4 times if it doesn't
                 tracks_in_playlist = len(tracks)
-                print(tracks_in_playlist)
                 tries = 1
                 while tries < 4 and tracks_in_playlist != number_of_tracks:
                     url = "https://api.spotify.com/v1/recommendations?&market=US&" + \
