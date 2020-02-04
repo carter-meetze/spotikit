@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<title>Vibifi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+<style>
+body,h1 {font-family: "Quicksand", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: linear-gradient(to top right, #060021, {{ mood_hex }});
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width:600px){
+    .h1{
+        font-size:32px!important
+    }
+    .h2{
+        font-size:28px!important
+    }
+    .h3{
+        font-size:24px!important
+    }
+    .h4{
+        font-size:20px!important
+    }
+    .h5{
+        font-size:16px!important
+    }
+    .h6{
+        font-size:14px!important
+    }
+    .a{
+        font-size:30px!important
+    }
+}
+
+.neon {
+  color: #fff;
+  text-shadow:
+    0 0 calc(.1px * {{ vibe }}) #fff,
+    0 0 calc(.2px * {{ vibe }}) #fff,
+    0 0 calc(.5px * {{ vibe }}) #fff,
+    0 0 calc(1px * {{ vibe }}) #0ff,
+    0 0 calc(1.7px * {{ vibe }}) #0ff,
+    0 0 calc(1.9px * {{ vibe }}) #0ff,
+    0 0 calc(2.1px * {{ vibe }}) #0ff,
+    0 0 calc(3.1px * {{ vibe }}) #0ff;
+}
+
+
+
+
+</style>
+
+<body>
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topmiddle">
+    <h1 class="w3-jumbo w3-animate-top h1">Vibifi</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:69%">
+  </div>
+    <div class="w3-center">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--<img src="{{ sign_img }}" width="150px" height="150px">-->
+        <h6>Your vibe index: <b>{{ vibe }}</b> out of 12</h6>
+        <h6>Average vibe index: <b>{{ sign_vibe }}</b> out of 12</h6>
+        <!--<p><a>{{ recommendation }}</a></p>-->
+        <div class="container">
+          <h6>{{ recommendation }}</h6>
+        </div>
+
+        <table style="width:0%" align="center">
+                        <tr>
+                <td align="right"><b>Overall Vibe:</b></td>
+                <td align="left"><img src="data:image/png;base64,{{ image|safe }}" alt="some text to display to your users when the image does not show correctly" width=500 height=auto /></td>
+            </tr>
+            <tr>
+                <td align="right"><b>Mood:</b></td>
+                <td align="left"><img src="data:image/png;base64,{{ image_valence|safe }}" alt="some text to display to your users when the image does not show correctly" width=500 height=auto /></td>
+            </tr>
+            <tr>
+        <td align="right"><b>Internal Energy:</b></td>
+            <td align="left"><img src="data:image/png;base64,{{ image_energy|safe }}" alt="some text to display to your users when the image does not show correctly" width=500 height=auto /></td>
+                </tr>
+            <tr>
+        <td align="right"><b>External Energy:</b></td>
+            <td align="left"><img src="data:image/png;base64,{{ image_danceability|safe }}" alt="some text to display to your users when the image does not show correctly" width=500 height=auto /></td>
+                </tr>
+            <tr>
+        <td align="right"><b>Pace:</b></td>
+           <td align="left"><img src="data:image/png;base64,{{ image_tempo|safe }}" alt="some text to display to your users when the image does not show correctly" width=500 height=auto /></td>
+
+            </tr>
+            </table>
+        <!--<h6>Mood Color:-->
+            <!--<img src="data:image/png;base64,{{ image_color|safe }}" alt="some text to display to your users when the image does not show correctly" />-->
+        <!--</h6>-->
+<form action="vibifi_playlist.html" method="post">
+
+            {% csrf_token %}
+
+            <br>
+            <br>
+            <input type="submit" value="make playlist"/>
+            <br>
+
+
+        </form>
+      </div>
+    <div class="w3-display-topright w3-center h1 h2 h3 h4 h5 h6">
+        <h6>Last login: {{ date }}</h6>
+    </div>
+</div>
+</body>
+</html>

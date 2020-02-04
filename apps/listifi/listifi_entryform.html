@@ -9,7 +9,7 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-hnnJox/visualization-of-bright-dots-moving-around-a-dark-background_n1l_mmuu__F0000.png');
+    background-color: black;
     min-height: 100%;
     background-position: center;
     background-size: cover;
@@ -50,7 +50,7 @@ body, html {height: 100%}
         <br>
         <br>
 
-              <form action="result.html" method="post">
+              <form action="listifi_result.html" method="post">
     {% csrf_token %}
             <h6> Enter an artist:</h6>
                   {{ form.artist }}
@@ -125,7 +125,7 @@ body, html {height: 100%}
     <!--</div>-->
   <!--</div>-->
 <!--</header>-->
-    <!--<form action="result.html" method="post">-->
+    <!--<form action="listifi_result.html" method="post">-->
     <!--{% csrf_token %} {{ form }}-->
     <!--<input type="submit" value="Submit"/>-->
 <!--</form>-->
@@ -142,7 +142,7 @@ body, html {height: 100%}
 
 
 
-        <!--<form action="result.html" method="post">-->
+        <!--<form action="listifi_result.html" method="post">-->
     <!--{% csrf_token %}-->
 
             <!--<h2> Enter an artist:</h2> {{ form.artist }}-->

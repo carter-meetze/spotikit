@@ -24,31 +24,33 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
-from .views import AuthUser, login_render
+from .listifi_views import AuthUser, login_render
 from django.urls import path
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
 from django.views.generic import TemplateView
-from .forms import entry
+from .listifi_forms import entry
 
 urlpatterns = [
     # defining url for form
 
-    url(r'^spotify/listifi/listifi/Templates/Entry.html', AuthUser.as_view()),
+    # url(r'/', TemplateView.as_view(template_name='listifi_login.html')),
 
-    url(r'entryform.html', entry),
+    url(r'^listifi/listifi/listifi/listifi_entry.html', AuthUser.as_view()),
+
+    url(r'listifi_entryform.html', entry),
 
     url(r'^admin/', admin.site.urls),
 
-    url(r'^spotify/listifi/listifi/Templates/login.html', TemplateView.as_view(template_name='login.html')),
+    url(r'^spotikit/listifi/listifi/listifi/listifi_login.html', TemplateView.as_view(template_name='listifi_login.html')),
 
-    url(r'^spotify/listifi/listifi/Templates/result.html', AuthUser.as_view()),
+    url(r'^listifi/listifi/listifi/listifi_result.html', AuthUser.as_view()),
 
-    url(r'spotify/listifi/listifi/Templates/cookies.html', TemplateView.as_view(template_name='cookies.html')),
+    url(r'listifi/listifi/listifi/listifi_cookies.html', TemplateView.as_view(template_name='listifi_cookies.html')),
 
-    url(r'spotify/listifi/listifi/Templates/help.html', TemplateView.as_view(template_name='help.html')),
+    url(r'listifi/listifi/listifi/listifi_help.html', TemplateView.as_view(template_name='listifi_help.html')),
 
-    url(r'spotify/listifi/listifi/Templates/error.html', TemplateView.as_view(template_name='error.html')),
+    url(r'listifi/listifi/listifi/listifi_error.html', TemplateView.as_view(template_name='listifi_error.html')),
 
     url(
         r'favicon.ico$',

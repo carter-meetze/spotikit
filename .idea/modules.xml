@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/spotify.iml" filepath="$PROJECT_DIR$/.idea/spotify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spotikit.iml" filepath="$PROJECT_DIR$/.idea/spotikit.iml" />
     </modules>
   </component>
 </project>

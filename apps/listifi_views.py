@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import requests
 from django.views import View
-from .forms import EntryForm
+from .listifi_forms import EntryForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 import random
@@ -10,11 +10,11 @@ from decouple import config
 
 
 def login_render(request):
-    template = loader.get_template("login.html")
+    template = loader.get_template("listifi_login.html")
     return HttpResponse(template.render)
 
 
-class AuthUser(View):
+class LAuthUser(View):
 
     def __init__(self):
         self.token = ""
@@ -25,7 +25,7 @@ class AuthUser(View):
 
     def entryform(self, request):
 
-            if request.method == 'GET' and request.path == '/spotify/listifi/listifi/Templates/Entry.html':
+            if request.method == 'GET' and request.path == '/spotikit/apps/listifi/listifi_entry.html':
                 try:
 
                     # flush all past sessions, just in case
@@ -39,7 +39,7 @@ class AuthUser(View):
                     print("Retrieved code: " + self.code)
                     values = {'grant_type': 'authorization_code', 'code': self.code,
                               'redirect_uri':
-                                  'http://localhost:8000/spotify/listifi/listifi/Templates/Entry.html',
+                                  'http://localhost:8000/spotikit/apps/listifi/listifi_entry.html',
                               'client_id': os.environ['CLIENT_ID'],
                               'client_secret': os.environ['CLIENT_SECRET'],
                               'scope': ['playlist-modify-public', 'playlist-modify-private']}
@@ -53,14 +53,14 @@ class AuthUser(View):
 
                     print("current session: " + request.session.get('access_token'))
                     return HttpResponseRedirect(
-                        'http://localhost:8000/spotify/listifi/listifi/Templates/entryform.html'
+                        'http://localhost:8000/spotikit/apps/listifi/listifi_entryform.html'
                     )
 
                 except(KeyError, TypeError, NameError):
-                    return HttpResponseRedirect('http://localhost:8000/spotify/listifi/listifi/Templates/error.html')
+                    return HttpResponseRedirect('http://localhost:8000/spotify/listifi/listifi/listifi/listifi_error.html')
 
     form_class_entry = EntryForm
-    template_name_entry = 'entryform.html'
+    template_name_entry = 'listifi_entryform.html'
 
     def post(self, request):
 
@@ -69,12 +69,12 @@ class AuthUser(View):
             self.token = request.session.get('access_token')
         else:
             return HttpResponseRedirect(
-                'http://localhost:8000/spotify/listifi/listifi/Templates/error.html'
+                'http://localhost:8000/spotify/listifi/listifi/listifi/listifi_error.html'
             )
 
         form = self.form_class_entry(request.POST)
 
-        if request.method == 'POST' and request.path == '/spotify/listifi/listifi/Templates/result.html':
+        if request.method == 'POST' and request.path == '/spotikit/apps/listifi/listifi_result.html':
             if form.is_valid():
                 artist_input = request.POST.get('artist')
                 genre_input_list = request.POST.getlist('genre')
@@ -183,15 +183,17 @@ class AuthUser(View):
                 # make a new playlist
                 create_url = "https://api.spotify.com/v1/users/" + u['id'] + "/playlists"
                 new_playlist = requests.post(create_url, headers=headers, json=json).json()
+                open_url = new_playlist['external_urls']['spotify']
 
                 # add the tracks to the playlist
                 add_tracks_url = "https://api.spotify.com/v1/users/" + u['id'] + "/playlists/" + new_playlist[
                     'id'] + "/tracks" + "?uris=" + ",".join(tracks)
                 add_tracks = requests.post(add_tracks_url, headers=headers).json()
-                return render(request, 'result.html', {
+                return render(request, 'listifi_result.html', {
                     'artist': form.cleaned_data['artist'],
                     'genre': form.cleaned_data['genre'],
                     'title': form.cleaned_data['title'],
-                    'tracks': form.cleaned_data['tracks']
+                    'tracks': form.cleaned_data['tracks'],
+                    'url': open_url
                 })
             return render(request, self.template_name_entry, {'form': form})

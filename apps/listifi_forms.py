@@ -44,13 +44,13 @@ class EntryForm(forms.Form):
                                 )
 
 
-def entry(request):
+def Lentry(request):
     if request.method == 'POST':
         form = EntryForm(request.POST)
         if form.is_valid():
 
-            return HttpResponseRedirect('result.html')
+            return HttpResponseRedirect('listifi_result.html')
     else:
         form = EntryForm()
 
-    return render(request, 'entryform.html', {'form': form})
+    return render(request, 'listifi_entryform.html', {'form': form})

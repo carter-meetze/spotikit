@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<title>Vibifi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand">
+
+<style>
+body,h1 {font-family: "Quicksand", sans-serif}
+body, html {height: 100%}
+
+.bgimg {
+    background-image: linear-gradient(to top right, #060021, var(--random-color));
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+
+}
+
+@media (max-width:600px){
+    .h1{
+        font-size:32px!important
+    }
+    .h2{
+        font-size:28px!important
+    }
+    .h3{
+        font-size:24px!important
+    }
+    .h4{
+        font-size:20px!important
+    }
+    .h5{
+        font-size:16px!important
+    }
+    .h6{
+        font-size:14px!important
+    }
+    .a{
+        font-size:30px!important
+    }
+}
+
+
+body {
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+	color: #fff;
+	background: linear-gradient(45deg, #060021, var(--random-color));
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 10s ease infinite;
+	-moz-animation: Gradient 10s ease infinite;
+	animation: Gradient 10s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+</style>
+
+
+
+<body>
+
+<!--<div class="w3-display-container w3-animate-opacity w3-text-white">-->
+  <div class="w3-display-topmiddle">
+    <h1 class="w3-jumbo w3-animate-top h1 w3-center">Vibifi</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:69%">
+  </div>
+    <div class="w3-display-middle w3-center w3-xlarge h1 h2 h3 h4 h5 h6 a">
+     <a href="https://accounts.spotify.com/en/authorize?client_id=f5e9ea13aa4448af8db66232ee23ff0e&response_type=code&redirect_uri=http://localhost:8000/spotikit/apps/vibifi/vibifi_entry.html&scope=playlist-modify-public%20playlist-modify-private%20user-read-recently-played%20user-read-private%20user-top-read%20streaming" class="w3-bar w3-btn">log in here</a>
+      </div>
+
+
+</body>
+
+<script>
+
+
+var colors = [
+  "#9dc7ac",
+  "#1578c9",
+  "#498474",
+  "#bada55",
+  "#ff7373",
+  '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'
+];
+
+var randomColor = colors[Math.floor(Math.random()*colors.length)];
+
+body = document.getElementsByTagName('body')[0];
+body.style.setProperty("--random-color", randomColor);
+
+localStorage.setItem('color', randomColor);
+
+
+</script>
+
+</html>

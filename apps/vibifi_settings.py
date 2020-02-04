@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'listifi',
+    'vibifi',
+    'apps'
 ]
 
 MIDDLEWARE = [
@@ -51,12 +52,16 @@ MIDDLEWARE = [
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
-ROOT_URLCONF = 'listifi.urls'
+ROOT_URLCONF = 'apps.vibifi_urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["/Users/cartermeetze/code/spotify/listifi/listifi/Templates"],
+        'DIRS': [
+            "/Users/cartermeetze/code/spotikit/apps/vibifi",
+            "/Users/cartermeetze/code/spotikit/apps/listifi",
+            "/Users/cartermeetze/code/spotikit"
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'listifi.wsgi.application'
+WSGI_APPLICATION = 'apps.vibifi_wsgi.application'
 
 
 # Database
