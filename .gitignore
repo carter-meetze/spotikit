@@ -102,6 +102,6 @@ ENV/
 
 # secrets
 secrets.py
-listifi_secrets.py
-vibifi_secrets.py
-vibifi_sql_query.py
+apps/listifi_secrets.py
+apps/vibifi_secrets.py
+apps/vibifi_sql_query.py
